@@ -1,6 +1,7 @@
 add_library(moira STATIC
 
 Moira.cpp
+MoiraFPU.cpp
 MoiraDebugger.cpp
 softfloat/softfloat.cpp
 )

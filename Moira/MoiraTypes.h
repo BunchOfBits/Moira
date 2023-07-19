@@ -335,19 +335,6 @@ struct PrefetchQueue {
     u16 ird;                // The instruction currently being executed
 };
 
-struct Float80 {
-
-    softfloat::floatx80 raw;
-};
-
-struct FPU {
-
-    Float80 fpr[8];
-    u32 fpiar;
-    u32 fpsr;
-    u32 fpcr;
-};
-
 struct InstrInfo
 {
     Instr I;

@@ -9,6 +9,7 @@
 
 #include "MoiraConfig.h"
 #include "MoiraTypes.h"
+#include "MoiraFPU.h"
 #include "MoiraDebugger.h"
 
 namespace moira {

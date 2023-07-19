@@ -22,6 +22,7 @@
 		50C0123A28BBAD9B001EFB37 /* m68k-dis.c in Sources */ = {isa = PBXBuildFile; fileRef = 50C0123628BBAD9B001EFB37 /* m68k-dis.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		50C0123B28BBAD9B001EFB37 /* m68k-opc.c in Sources */ = {isa = PBXBuildFile; fileRef = 50C0123728BBAD9B001EFB37 /* m68k-opc.c */; settings = {COMPILER_FLAGS = "-w"; }; };
 		50CECEC723A924B000E07C65 /* Sandbox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50CECEC523A924B000E07C65 /* Sandbox.cpp */; settings = {COMPILER_FLAGS = "-Wno-conversion"; }; };
+		50DCD5A52A680E5C004E62F4 /* MoiraFPU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 50DCD5A32A680E5C004E62F4 /* MoiraFPU.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -106,6 +107,8 @@
 		50C0124028BBAE80001EFB37 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		50CECEC523A924B000E07C65 /* Sandbox.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Sandbox.cpp; sourceTree = "<group>"; };
 		50CECEC623A924B000E07C65 /* Sandbox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sandbox.h; sourceTree = "<group>"; };
+		50DCD5A32A680E5C004E62F4 /* MoiraFPU.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MoiraFPU.cpp; sourceTree = "<group>"; };
+		50DCD5A42A680E5C004E62F4 /* MoiraFPU.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoiraFPU.h; sourceTree = "<group>"; };
 		50EC62EE289DB14500398CBD /* MoiraMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoiraMacros.h; sourceTree = "<group>"; };
 		50F549DE288E817600D5D559 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
 		50F80AA723C9E4EC00F21D80 /* CMakeLists.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 				50804F392387B466004D3EC2 /* MoiraDasm_cpp.h */,
 				50FA79A428BA349700610F21 /* MoiraDasmMMU_cpp.h */,
 				50FA79A528BA34AE00610F21 /* MoiraDasmFPU_cpp.h */,
+				50DCD5A42A680E5C004E62F4 /* MoiraFPU.h */,
+				50DCD5A32A680E5C004E62F4 /* MoiraFPU.cpp */,
 				502C09DE23C8D82600A179E1 /* MoiraDebugger.h */,
 				502C09DD23C8D82600A179E1 /* MoiraDebugger.cpp */,
 				5010BDAD238A897400CFD010 /* StrWriter.h */,
@@ -331,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50DCD5A52A680E5C004E62F4 /* MoiraFPU.cpp in Sources */,
 				505580EC23AFA14D0009F77F /* musashi.cpp in Sources */,
 				5028B11C288D9EDC00047C20 /* m68kcpu.c in Sources */,
 				50C0123B28BBAD9B001EFB37 /* m68k-opc.c in Sources */,
