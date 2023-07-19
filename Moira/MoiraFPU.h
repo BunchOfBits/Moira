@@ -43,6 +43,16 @@ public:
 
 
     //
+    // Configuring
+    //
+
+public:
+
+    // Selects the emulated CPU model
+    void setModel(FPUModel model);
+    FPUModel getModel() const { return model; }
+
+    //
     // Analyzing instructions
     //
 

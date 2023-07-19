@@ -65,10 +65,39 @@ Moira::setModel(Model cpuModel, Model dasmModel)
     this->cpuModel = cpuModel;
     this->dasmModel = dasmModel;
 
+    // Select the proper FPU core if no external co-processor is present
+    if (!has6888x()) fpu.setModel(hasFPU() ? FPU_68040 : FPU_NONE);
+
     createJumpTable(cpuModel, dasmModel);
 
     reg.cacr &= cacrMask();
     flags &= ~CPU_IS_LOOPING;
+}
+
+void
+Moira::attach6888x(int x)
+{
+    assert(x == 1 || x == 2);
+
+    FPUModel model = x == 1 ? FPU_68881 : FPU_68882;
+
+    if (fpu.getModel() != model) {
+
+        fpu.setModel(model);
+        createJumpTable(cpuModel, dasmModel);
+    }
+}
+
+void
+Moira::detach6888x()
+{
+    FPUModel model = hasFPU() ? FPU_68040 : FPU_NONE;
+
+    if (fpu.getModel() != model) {
+
+        fpu.setModel(model);
+        createJumpTable(cpuModel, dasmModel);
+    }
 }
 
 void
@@ -100,7 +129,7 @@ Moira::setNumberFormat(DasmStyle &style, const DasmNumberFormat &value)
 }
 
 bool
-Moira::hasCPI()
+Moira::hasCPI() const
 {
     switch (cpuModel) {
 
@@ -113,7 +142,7 @@ Moira::hasCPI()
 }
 
 bool
-Moira::hasMMU()
+Moira::hasMMU() const
 {
     switch (cpuModel) {
 
@@ -126,7 +155,7 @@ Moira::hasMMU()
 }
 
 bool
-Moira::hasFPU()
+Moira::hasFPU() const
 {
     switch (cpuModel) {
 
@@ -158,6 +187,12 @@ Moira::addrMask() const
         case M68010:    return addrMask<C68010>();
         default:        return addrMask<C68020>();
     }
+}
+
+bool
+Moira::has6888x() const
+{
+    return fpu.getModel() == FPU_68881 || fpu.getModel() == FPU_68882;
 }
 
 template <Core C> u32

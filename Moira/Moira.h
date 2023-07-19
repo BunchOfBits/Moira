@@ -16,6 +16,7 @@ namespace moira {
 
 class Moira {
 
+    friend class FPU;
     friend class Debugger;
     friend class Breakpoints;
     friend class Watchpoints;
@@ -150,6 +151,10 @@ public:
     void setModel(Model cpuModel, Model dasmModel);
     void setModel(Model model) { setModel(model, model); }
 
+    // Attaches or detaches a coprocessor
+    void attach6888x(int x);
+    void detach6888x();
+
     // Configures the visual appearance of disassembled instructions
     void setDasmSyntax(DasmSyntax value);
     void setDasmNumberFormat(DasmNumberFormat value) { setNumberFormat(instrStyle, value); }
@@ -172,19 +177,22 @@ private:
 public:
 
     // Checks if the emulated CPU model has a coprocessor interface
-    bool hasCPI();
+    bool hasCPI() const;
 
     // Checks if the emulated CPU model has a memory managenemt unit
-    bool hasMMU();
+    bool hasMMU() const;
 
     // Checks if the emulated CPU model has a floating point unit
-    bool hasFPU();
+    bool hasFPU() const;
 
     // Returns the cache register mask (accessible CACR bits)
     u32 cacrMask() const;
 
     // Returns the address bus mask (bus width)
     u32 addrMask() const;
+
+    // Checks if a floating-point coprocessor is attached
+    bool has6888x() const;
 
 protected:
 

@@ -6,8 +6,8 @@
 // -----------------------------------------------------------------------------
 
 #include "MoiraFPU.h"
+#include "Moira.h"
 #include "MoiraMacros.h"
-#include "StrWriter.h"
 
 namespace moira {
 
@@ -21,6 +21,15 @@ FPU::reset()
     fpiar = 0;
     fpsr = 0;
     fpcr = 0;
+}
+
+void
+FPU::setModel(FPUModel model)
+{
+    // Only proceed if the model changes
+    if (this->model == model) return;
+
+    this->model = model;
 }
 
 bool
