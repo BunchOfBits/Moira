@@ -195,8 +195,6 @@ Moira::reset()
     fcl = 0;
     fcSource = 0;
 
-    fpu = { };
-
     SYNC(16);
 
     // Read the initial (supervisor) stack pointer from memory
@@ -215,6 +213,8 @@ Moira::reset()
     SYNC(2);
     prefetch<C>();
 
+    // Reset subcomponents
+    fpu.reset();
     debugger.reset();
 
     // Inform the delegate

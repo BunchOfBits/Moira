@@ -47,6 +47,9 @@ protected:
 
 public:
 
+    // Floating point unit (not supported yet)
+    FPU fpu = FPU(*this);
+
     // Breakpoints, watchpoints, catchpoints, instruction tracing
     Debugger debugger = Debugger(*this);
 
@@ -65,9 +68,6 @@ protected:
 
     // The prefetch queue
     PrefetchQueue queue;
-
-    // The floating point unit (not supported yet)
-    FPU fpu;
 
     // The interrupt mode of this CPU
     IrqMode irqMode = IRQ_AUTO;
@@ -464,7 +464,7 @@ private:
     // Checks the validity of the extension words
     bool isValidExt(Instr I, Mode M, u16 op, u32 ext) const;
     bool isValidExtMMU(Instr I, Mode M, u16 op, u32 ext) const;
-    bool isValidExtFPU(Instr I, Mode M, u16 op, u32 ext) const;
+    // bool isValidExtFPU(Instr I, Mode M, u16 op, u32 ext) const;
 
     // Returns an availability string (used by the disassembler)
     const char *availabilityString(Instr I, Mode M, Size S, u16 ext);
