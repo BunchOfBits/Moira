@@ -5,6 +5,4 @@
 // Published under the terms of the MIT License
 // -----------------------------------------------------------------------------
 
-#pragma once
-
 #include "MoiraFPU.h"
