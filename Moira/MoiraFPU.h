@@ -18,6 +18,8 @@ struct Float80 {
 
 class FPU {
 
+public: // REMOVE ASAP
+    
     // Reference to the CPU
     class Moira &moira;
 
@@ -52,6 +54,7 @@ public:
     void setModel(FPUModel model);
     FPUModel getModel() const { return model; }
 
+
     //
     // Analyzing instructions
     //
@@ -60,6 +63,20 @@ public:
 
     // Checks the validity of the extension words
     bool isValidExt(Instr I, Mode M, u16 op, u32 ext) const;
+
+
+    //
+    // Accessing registers
+    //
+
+    void setFPR(int n, u16 high, u64 low);
+
+
+    //
+    // Executing instructions
+    //
+
+    // void execFMovecr(u16 op, u16 ext);
 
 };
 

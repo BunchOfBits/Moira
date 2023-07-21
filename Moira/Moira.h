@@ -11,6 +11,7 @@
 #include "MoiraTypes.h"
 #include "MoiraFPU.h"
 #include "MoiraDebugger.h"
+#include "softfloat.h"
 
 namespace moira {
 
