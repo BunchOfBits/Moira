@@ -43,7 +43,7 @@ static const bool PROFILE_DASM = false;
 #define doDasm(opcode) (opcode >= 0x0000 && opcode <= 0xFFFF)
 
 // Uncomment to check against M68K in Motorola syntax
-#define MOTOROLA
+// #define MOTOROLA
 
 // Uncomment to create M68881 compatible disassembler output
 // #define ENABLE_M68881

@@ -116,7 +116,7 @@ void setupMoira()
     moiracpu->setModel(cpuModel);
 
 #ifdef ENABLE_M68881
-    printf("Attachign 68881\n");
+    // printf("Attachign 68881\n");
     moiracpu->attach6888x(1);
 #endif
 }
