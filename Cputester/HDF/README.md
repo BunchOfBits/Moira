@@ -107,7 +107,6 @@ mode=mv2sr.w,mvusp2r,mvr2usp,illegal,chk,trap,trapv,divu,divs,orsr.w
 ```
 
 ### LOOP*n*_0x0.hdf
-
 Supported CPUs: 68010
 
 ```
@@ -155,3 +154,14 @@ exceptions=-48,-49,-50,-51,-52,-53,-54
 min_opcode_test_rounds=5000
 mode=fmove,fsmove,fdmove,fint,fintrz,fneg,fsneg,fdneg,fabs,fsabs,fdabs,fdiv,fsdiv,fddiv,fadd,fsadd,fdadd,fmul,fsmul,fdmul,fsgldiv,fsglmul,fsub,fssub,fdsub,fcmp,ftst,fsqrt
 ```
+
+### FBASIC_68882_020.hdf
+
+cpu=68020
+fpu=68882
+feature_sr_mask=0xc000
+exceptions=-48,-49,-50,-51,-52,-53,-54
+min_opcode_test_rounds=5000
+mode=fmove,fsmove,fdmove,fint,fintrz,fneg,fsneg,fdneg,fabs,fsabs,fdabs,fdiv,fsdiv,fddiv,fadd,fsadd,fdadd,fmul,fsmul,fdmul,fsgldiv,fsglmul,fsub,fssub,fdsub,fcmp,ftst,fsqrt
+
+
